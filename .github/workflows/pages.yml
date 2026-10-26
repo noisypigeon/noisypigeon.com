@@ -1,6 +1,7 @@
 # This repo is only noisypigeon.com's Pages shim (LIB-0031): Pages deploys only
 # the repo the workflow runs in (DEV-0156). The site lives in noisypigeon/runway
-# at workloads/blog/, and this builds runway's current main and deploys it here.
+# at workloads/noisypigeon.com/blog/ (LIB-0037), and this builds runway's
+# current main and deploys it here.
 # runway's sites.yml and blog-changelog.yml dispatch it on a site change, and
 # the library's theme release dispatches it by name. Every shim's deploy
 # workflow is pages.yml, the one name those callers know (LIB-0034 §4). The
@@ -22,7 +23,7 @@ concurrency:
 
 jobs:
   deploy:
-    uses: noisypigeon/library/.github/workflows/site-pages.yml@workflows/v5.1.0
+    uses: noisypigeon/library/.github/workflows/site-pages.yml@workflows/v6.1.0
     with:
       spoke: noisypigeon/runway
-      workload: blog
+      workload: noisypigeon.com/blog
